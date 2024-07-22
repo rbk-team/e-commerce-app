@@ -1,0 +1,17 @@
+.countdown span {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer h5 {
+    margin-bottom: 1rem;
+}
