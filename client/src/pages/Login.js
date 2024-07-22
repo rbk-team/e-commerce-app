@@ -1,56 +1,39 @@
-import React, { useState } from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import api from '../services/api';
+import React from 'react';
+import image from '../assets/image.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const navigate = useNavigate();
 
-    const submitHandler = async (e) => {
-        e.preventDefault();
-        try {
-            const { data } = await api.loginUser({ email, password });
-            localStorage.setItem('authToken', data.token);
-            navigate('/');
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    return (
-        <div className="my-5">
-            <Row className="justify-content-md-center">
-                <Col xs={12} md={6}>
-                    <h1>Sign In</h1>
-                    <Form onSubmit={submitHandler}>
-                        <Form.Group controlId="email">
-                            <Form.Label>Email Address</Form.Label>
-                            <Form.Control
-                                type="email"
-                                placeholder="Enter email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-                        <Form.Group controlId="password">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                placeholder="Enter password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-                        <Button type="submit" variant="primary">
-                            Sign In
-                        </Button>
-                    </Form>
-                </Col>
-            </Row>
+const LoginPage = () => {
+  return (
+  
+    
+      <div className="container-fluid vh-100 d-flex">
+        <div className="row flex-grow-1">
+          <div className="col-md-6 d-flex align-items-center justify-content-center bg-light">
+            <img src={image} alt="Shopping" className="img-fluid" />
+          </div>
+          <div className="col-md-6 d-flex align-items-center justify-content-center">
+            <div className="w-75">
+              <h1 className="mb-3">Log in to Exclusive</h1>
+              <p className="text-muted mb-4">Enter your details below</p>
+              <form>
+                <div className="mb-3">
+                  <input type="text" className="form-control" placeholder="Email or Phone Number" />
+                </div>
+                <div className="mb-3">
+                  <input type="password" className="form-control" placeholder="Password" />
+                </div>
+                <div className="d-flex justify-content-between align-items-center">
+                  <button type="submit" className="btn btn-danger">Log In</button>
+                  <a href="#" className="text-danger">Forget Password?</a>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+   
+  );
 };
 
-export default Login;
+export default LoginPage;

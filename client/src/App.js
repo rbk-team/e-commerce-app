@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
-import Login from './pages/Login';
+import Login from './pages/Login.js';
 import Register from './pages/Register';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
