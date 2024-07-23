@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
-import api from '../services/api';
+import api from '../../services/api';
 
 const ProductDetail = () => {
     const { id } = useParams();

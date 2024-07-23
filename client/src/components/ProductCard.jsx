@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
-import { addToCart } from '../../services/api.js';
+import { addToCart } from '../../src/services/api.js';
 
 const ProductCard = ({ product, userId }) => {
     const handleAddToCart = async () => {
