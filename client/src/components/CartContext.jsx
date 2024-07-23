@@ -5,41 +5,33 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const addToCart = (item) => {
-    setCart((prevCart) => {
-      const itemInCart = prevCart.find(cartItem => cartItem.id === item.id);
-      if (itemInCart) {
-        return prevCart.map(cartItem =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
+  const addToCart = (product) => {
+    setCart(prevCart => {
+      const existingProduct = prevCart.find(item => item.id === product.id);
+      if (existingProduct) {
+        return prevCart.map(item =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         );
       } else {
-        return [...prevCart, { ...item, quantity: 1 }];
+        return [...prevCart, { ...product, quantity: 1 }];
       }
     });
   };
 
-  const removeFromCart = (itemId) => {
-    setCart((prevCart) => prevCart.filter(item => item.id !== itemId));
+  const removeFromCart = (id) => {
+    setCart(prevCart => prevCart.filter(item => item.id !== id));
   };
 
-  const incrementQuantity = (itemId) => {
-    setCart((prevCart) =>
-      prevCart.map(item =>
-        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
+  const incrementQuantity = (id) => {
+    setCart(prevCart => prevCart.map(item =>
+      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+    ));
   };
 
-  const decrementQuantity = (itemId) => {
-    setCart((prevCart) =>
-      prevCart.map(item =>
-        item.id === itemId && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      )
-    );
+  const decrementQuantity = (id) => {
+    setCart(prevCart => prevCart.map(item =>
+      item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+    ));
   };
 
   return (

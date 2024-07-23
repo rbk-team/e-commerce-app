@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Card, Button, Container, Row, Col, ButtonGroup } from 'react-bootstrap';
 import axios from 'axios';
-import CartContext from '../../components/CartContext.jsx';
+import CartContext from '../../components/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Card.css';
 
 const CardPage = () => {
-  const { cart, removeFromCart, incrementQuantity, decrementQuantity, addToCart } = useContext(CartContext);
+  const { cart, removeFromCart, incrementQuantity, decrementQuantity } = useContext(CartContext);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
