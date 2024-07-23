@@ -24,7 +24,8 @@ const NavBar = () => {
                         </Nav.Link>
                         <Nav.Link as={Link} to="/card"><i className="fa-solid fa-bag-shopping"></i>
                         </Nav.Link>
-                        
+                        <Nav.Link as={Link} to="/card"><i className="fa-solid fa-bag-shopping"></i>
+                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
