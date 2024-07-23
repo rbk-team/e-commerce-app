@@ -1,0 +1,32 @@
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .button-group button {
+    flex: 1;
+    margin: 0 0.25rem;
+  }
+  
+  .bt1{
+  background: transparent;
+  color: black;
+  transition: 0.5s;
+  }
+  .bt1:hover{
+    background: red;
+  }
+  .bt2{
+    background: transparent;
+  color: black;
+  transition: 0.5s;
+  }
+  .bt2:hover{
+    background: green;
+  }
+  .btR{
+    margin-left: 120px;
+    margin-bottom: 10px;
+  }
+  

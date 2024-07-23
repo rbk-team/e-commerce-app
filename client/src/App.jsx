@@ -1,31 +1,46 @@
 
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { CartProvider } from './components/CartContext.jsx';
+
+import Navbar from "./components/Navbar";
+import CardPage from './Pages/Card/Card.jsx';
+import Hero from './Pages/Home/Hero.jsx';
+import image from "./assets/hero_image.jpg";
+import Footer from './components/Footer.jsx';
+import Error from "./Pages/Error/Error.jsx";
+import About from './Pages/About/About.jsx';
+import Contact from './Pages/Contact/Contact.jsx'
+import SignUp from "./Pages/Sign Up/SignUp.jsx";
+function AppContent() {
+  const location = useLocation();
+  return (
+    <>
+      <Navbar />
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<Hero image={image} />} /> 
+          <Route path="/Error" element={<Error />} />
+          <Route path="/Card" element={<CardPage />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/SignUp" element={<SignUp/>}/>
+        </Routes>
+      </div>
+      {location.pathname !== '/Card' && <Footer />}
+    </>
+  );
+}
+
 
 function App() {
   
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-       
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <CartProvider>
+    <Router>
+      <AppContent />
+    </Router>
+  </CartProvider>
   );
 }
 

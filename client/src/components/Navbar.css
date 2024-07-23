@@ -1,0 +1,29 @@
+.navbar {
+    background-color: rgb(255, 255, 255);
+    
+    overflow: hidden;
+    
+  }
+
+  .topPage{
+  background: #000; 
+  color: rgb(185, 185, 185);
+  text-align: center;  
+  padding: 0 0 20px;
+ 
+  }
+
+ .me-auto{
+ font-size: 18px;
+ margin-left: 20%;
+ transition: 1s;
+ }
+
+
+
+ .inputBox{
+  border-radius: 10px;
+  border: solid 1px rgb(207, 207, 207);
+  text-align: center;
+ }
+
