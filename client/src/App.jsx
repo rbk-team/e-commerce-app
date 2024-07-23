@@ -6,7 +6,6 @@ import { CartProvider } from './components/CartContext.jsx';
 import Navbar from "./components/Navbar";
 import CardPage from './Pages/Card/Card.jsx';
 import Hero from './Pages/Home/Hero.jsx';
-import image from "./assets/hero_image.jpg";
 import Footer from './components/Footer.jsx';
 import Error from "./Pages/Error/Error.jsx";
 import About from './Pages/About/About.jsx';
@@ -19,7 +18,7 @@ function AppContent() {
       <Navbar />
       <div className="content">
         <Routes>
-          <Route path="/" element={<Hero image={image} />} /> 
+          <Route path="/" element={<Hero/>} /> 
           <Route path="/Error" element={<Error />} />
           <Route path="/Card" element={<CardPage />} />
           <Route path="/About" element={<About />} />
