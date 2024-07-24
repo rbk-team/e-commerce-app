@@ -31,7 +31,7 @@ const Footer = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={12} className="text-center mt-3">
+                    <Col sm={12} style={{textAlign:'center'}}>
                         <p>© 2024 Exclusive. All Rights Reserved.</p>
                     </Col>
                 </Row>

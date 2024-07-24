@@ -9,24 +9,45 @@
     margin: 0 0.25rem;
   }
   
+  .Container{
+    transition: transform 0.4s;
+  }
+  .Container:hover{
+    transform: scale(1.30);
+
+  }
+
   .bt1{
   background: transparent;
   color: black;
   transition: 0.5s;
+  font-size: 25px;
+  border: none;
   }
   .bt1:hover{
-    background: red;
+    background: rgb(173, 23, 0);
+    
   }
   .bt2{
     background: transparent;
   color: black;
   transition: 0.5s;
+  border: none;
+  font-size: 25px;
+
   }
   .bt2:hover{
     background: green;
+    
   }
   .btR{
     margin-left: 120px;
     margin-bottom: 10px;
+    background: black;
+    border: none;
+    transition: 0.5s;
   }
-  
+
+  .btR:hover{
+    background: rgb(173, 23, 0);
+  }

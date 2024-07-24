@@ -5,6 +5,8 @@ import FlashSales from '../../components/FlashSales';
 import Categories from '../../components/Categories';
 import BestSellingProducts from '../../components/BestSellingProducts';
 import NewArrivals from '../../components/NewArrivals';
+import Categorie from '../../components/Categorie';
+import OurProducts from '../../components/OurProducts';
 import { Button } from 'react-bootstrap';
 
 const Home = () => {
@@ -20,8 +22,11 @@ const Home = () => {
             <FlashSales />
             <Categories />
             <BestSellingProducts />
+            <Banner />
+            <OurProducts />
             <NewArrivals />
-            <Button onClick={handleViewAllProducts}>View All Products</Button>
+            <Categorie />
+            <Button className='mt-3' onClick={handleViewAllProducts}>View All Products</Button>
         </div>
     );
 };

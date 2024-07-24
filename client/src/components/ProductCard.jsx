@@ -1,8 +1,8 @@
-// ProductCard.jsx
 import React, { useContext } from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import CartContext from '../components/CartContext'; 
-
+import '../Pages/Home/Hero.css'
 const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
 
@@ -10,16 +10,22 @@ const ProductCard = ({ product }) => {
     addToCart(product);
   };
 
+  const handleAddToWishList = () => {
+    WishList(product);
+  };
+
   return (
-    <Card className="my-3">
+    <Card  className="product-card">
       <Card.Img variant="top" src={product.image} alt={product.name} />
-      <Card.Body>
+      <Button style={{background:'white',border:'none',color:'black',fontSize:'25px'}} onClick={handleAddToWishList}><i class="fas fa-heart"></i>
+       </Button>
+      <Card.Body >
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>
           Price: ${product.price} <br />
           Discount: {product.discount}%
         </Card.Text>
-        <Button onClick={handleAddToCart}>Add to Cart</Button>    
+        <Button style={{ marginLeft:'70px',backgroundColor: 'black', color: 'white',border:'none' }} onClick={handleAddToCart}>Add to Cart</Button>    
         
       </Card.Body>
     </Card>

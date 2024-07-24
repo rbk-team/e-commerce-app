@@ -17,14 +17,21 @@ const NavBar = () => {
                 <Navbar.Collapse className="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link></Nav.Link>
                         <Nav.Link as={Link} to="/Contact">Contact</Nav.Link>
+                        <Nav.Link></Nav.Link>
                         <Nav.Link as={Link} to="/About">About</Nav.Link>
+                        <Nav.Link></Nav.Link>
                         <Nav.Link as={Link} to="/SignUp">Sign Up</Nav.Link>
-                        <Nav.Link as={Link} to="#"><input className='inputBox' type="text" placeholder='searsh....' />
+                        <Nav.Link as={Link} to="#"><input className='inputBox' type="text" placeholder='Search....' />
+                        </Nav.Link>
+                        <Nav.Link></Nav.Link>
+
+                        <Nav.Link as={Link} to="/WishList"><i class="fas fa-heart"></i>
                         </Nav.Link>
                         <Nav.Link as={Link} to="/card"><i className="fa-solid fa-bag-shopping"></i>
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/card"><i className="fa-solid fa-bag-shopping"></i>
+                        <Nav.Link as={Link} to="/Signup"><i class="fas fa-user-circle"></i>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
