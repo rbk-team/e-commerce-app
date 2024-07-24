@@ -1,19 +1,19 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
-
+require('dotenv').config();
 exports.registerUser = async (req, res) => {
-    const { firstName, lastName, email, password, city, street } = req.body;
+    const { firstName, email, password } = req.body;
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = await User.create({
             firstName,
-            lastName,
+           
             email,
             password: hashedPassword,
-            city,
-            street,
+          
+          
             role: 'user'
         });
         res.status(201).json(user);
@@ -24,6 +24,9 @@ exports.registerUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
     const { email, password } = req.body;
+    console.log('JWT_SECRET:kkkkkkkkkkkkkkkkkkkk');
+
+    console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
     try {
         const user = await User.findOne({ where: { email } });
@@ -40,4 +43,3 @@ exports.loginUser = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
-

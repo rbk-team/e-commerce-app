@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 
-const WishlistContex = createContext();
+const WishlistContext = createContext();
 
 export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
@@ -9,11 +9,15 @@ export const WishlistProvider = ({ children }) => {
     setWishlist((prevWishlist) => [...prevWishlist, product]);
   };
 
+  const removeFromWishlist = (productId) => {
+    setWishlist((prevWishlist) => prevWishlist.filter(product => product.id !== productId));
+  };
+
   return (
-    <WishlistContext.Provider value={{ wishlist, addToWishlist }}>
+    <WishlistContext.Provider value={{ wishlist, addToWishlist, removeFromWishlist }}>
       {children}
     </WishlistContext.Provider>
   );
 };
 
-export default WishlistContex;
+export default WishlistContext;
