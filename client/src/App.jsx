@@ -11,6 +11,8 @@ import Error from "./Pages/Error/Error.jsx";
 import About from './Pages/About/About.jsx';
 import Contact from './Pages/Contact/Contact.jsx'
 import SignUp from "./Pages/Sign Up/SignUp.jsx";
+import ProductDetails from "./Pages/Product Details/ProductDetails.jsx";
+
 function AppContent() {
   const location = useLocation();
   return (
@@ -24,6 +26,7 @@ function AppContent() {
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/SignUp" element={<SignUp/>}/>
+          <Route path="/details" component={<ProductDetails/>} />
         </Routes>
       </div>
       {location.pathname !== '/Card' && <Footer />}
