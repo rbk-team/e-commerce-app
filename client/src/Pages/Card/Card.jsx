@@ -23,12 +23,12 @@ const CardPage = () => {
   }, []);
 
   return (
-    <Container>
+    <Container >
       <Row xs={1} md={2} lg={3} className="g-4">
         {cart.map(item => (
           <Col key={item.id}>
             <Card style={{ width: '20rem' }}>
-              <Card.Img variant="top" src={item.image} alt={item.name} />
+              <Card.Img className='Container' variant="top" src={item.image} alt={item.name} />
               <Card.Body>
                 <Card.Title>{item.name}</Card.Title>
                 <Card.Text>
