@@ -11,9 +11,10 @@ const orderRoutes = require('./routes/orderRoutes');
 const app = express();
 
 app.use(bodyParser.json());
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static('uploads'))
+;
 
-// Routes
+
 app.use('/api/users', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);

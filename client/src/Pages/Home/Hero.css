@@ -93,3 +93,10 @@
   padding: 10px;
   
 }
+
+.btn {
+  background: transparent;
+  color: black;
+  border:none;
+  
+}

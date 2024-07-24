@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/all.css';
-import './Navbar.css'
+import './Navbar.css';
+import CartContext from '../components/CartContext'; 
+
 const NavBar = () => {
+    const { cartItemCount } = useContext(CartContext);
+
     return (
       <>
       <div className='topPage'>
-      <h4 >Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</h4>
+        <h4>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</h4>
       </div>
         <Navbar bg="light" expand="lg">
-        
             <Container>
                 <Navbar.Brand href="/">Exclusive</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,16 +26,14 @@ const NavBar = () => {
                         <Nav.Link as={Link} to="/About">About</Nav.Link>
                         <Nav.Link></Nav.Link>
                         <Nav.Link as={Link} to="/SignUp">Sign Up</Nav.Link>
-                        <Nav.Link as={Link} to="#"><input className='inputBox' type="text" placeholder='Search....' />
-                        </Nav.Link>
+                        <Nav.Link as={Link} to="#"><input className='inputBox' type="text" placeholder='Search....' /></Nav.Link>
                         <Nav.Link></Nav.Link>
-
-                        <Nav.Link as={Link} to="/WishList"><i class="fas fa-heart"></i>
+                        <Nav.Link as={Link} to="/WishList"><i className="fas fa-heart"></i></Nav.Link>
+                        <Nav.Link as={Link} to="/card" className="cart-icon">
+                            <i className="fa-solid fa-bag-shopping"></i>
+                            {cartItemCount > 0 && <span className="cart-counter">{cartItemCount}</span>}
                         </Nav.Link>
-                        <Nav.Link as={Link} to="/card"><i className="fa-solid fa-bag-shopping"></i>
-                        </Nav.Link>
-                        <Nav.Link as={Link} to="/Signup"><i class="fas fa-user-circle"></i>
-                        </Nav.Link>
+                        <Nav.Link as={Link} to="/Login"><i className="fas fa-user-circle"></i></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
