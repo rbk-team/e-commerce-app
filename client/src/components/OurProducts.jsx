@@ -7,14 +7,19 @@ import img12 from '../assets/12.png'
 import img13 from '../assets/13.png'
 import img14 from '../assets/14.png'
 
-const FlashSales = () => {
+const OurProducts = () => {
   const { addToCart } = useContext(CartContext);
   const products = [
     { id: 1, name: 'HAVIT HV-G92 Gamepad', price: 60 , discount: 44, image: img11 },
     { id: 2, name: 'AK-900 Wired Keyboard', price: 50, discount: 30, image: img12 },
     { id: 3, name: 'AK-900 Wired Keyboard', price: 50, discount: 30, image: img13 },
     { id: 4, name: 'AK-900 Wired Keyboard', price: 50, discount: 30, image: img14 },
+    { id: 2, name: 'AK-900 Wired Keyboard', price: 50, discount: 30, image: img12 },
+    { id: 4, name: 'AK-900 Wired Keyboard', price: 50, discount: 30, image: img14 },
+    { id: 1, name: 'HAVIT HV-G92 Gamepad', price: 60 , discount: 44, image: img11 },
+    { id: 3, name: 'AK-900 Wired Keyboard', price: 50, discount: 30, image: img13 },
    
+
   ];
   
   return (
@@ -22,7 +27,7 @@ const FlashSales = () => {
     <div className="my-5">
      
       <div className="countdown mb-3">
-     <h3>Flash Sales</h3>
+     <h3>Our Products</h3>
       </div>
       <Row>
         {products.map(product => (
@@ -37,4 +42,4 @@ const FlashSales = () => {
   );
 };
 
-export default FlashSales;
+export default OurProducts;
