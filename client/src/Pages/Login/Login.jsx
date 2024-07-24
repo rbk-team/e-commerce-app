@@ -9,7 +9,7 @@ const LoginPage = () => {
     
       <div className="container-fluid vh-100 d-flex">
         <div className="row flex-grow-1">
-          <div className="col-md-6 d-flex align-items-center justify-content-center bg-light">
+          <div className="col-md-6 d-flex align-items-center ">
             <img src={image} alt="Shopping" className="img-fluid" />
           </div>
           <div className="col-md-6 d-flex align-items-center justify-content-center">

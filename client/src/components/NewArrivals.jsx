@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import ProductCard from './ProductCard';
-import '../Pages/Home/Hero.css'
+import '../pages/Home/Hero.css'
 import img11 from '../assets/11.png'
 import img12 from '../assets/12.png'
 import img13 from '../assets/13.png'

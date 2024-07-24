@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
-import '../Pages/Home/Hero.css'
+import '../pages/Home/Hero.css'
 const Categories = () => {
     const categories = [
         { name: 'FREE AND FAST DELIVERY', icon: ' fas fa-truck' },

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import CartContext from '../components/CartContext'; 
-import '../Pages/Home/Hero.css'
+import '../pages/Home/Hero.css'
 const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
 
